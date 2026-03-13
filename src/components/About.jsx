@@ -7,8 +7,8 @@ import ScrollReveal from './ScrollReveal';
 //    "your-photo.jpg" with your actual image filename.
 //    Place your image in: src/assets/your-photo.jpg
 // ──────────────────────────────────────────────────────
-// import profilePhoto from '../assets/your-photo.jpg';
-const profilePhoto = null; // ← remove this line once you uncomment the import above
+import profilePhoto from '../assets/photo.jpeg';
+// const profilePhoto = null; // ← remove this line once you uncomment the import above
 
 const socials = [
     { icon: SiGithub, href: 'https://github.com/KaushalrajPuwar', label: 'GitHub' },
