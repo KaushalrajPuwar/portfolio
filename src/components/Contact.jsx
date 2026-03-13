@@ -157,9 +157,7 @@ const Contact = () => {
                     <ScrollReveal direction="left" delay={0.1} className="md:col-span-2">
                         <div className="space-y-6">
                             <p className="font-body text-cream/70 text-base leading-relaxed">
-                                Whether you want to collaborate on a project, talk about research, or just
-                                say hi — I&apos;d love to hear from you. I&apos;m always open to interesting
-                                conversations and new ideas.
+                                Whether you want to collaborate on a project, talk about research, or just say hi - I&apos;d love to hear from you. I&apos;m always open to interesting conversations and discussing new ideas.
                             </p>
 
                             <div className="space-y-3">
