@@ -59,7 +59,7 @@ const Hero = () => {
 
                     {CONFIG.SHOW_RESUME_HERO && (
                         <a
-                            href="/Resume.pdf"
+                            href="/resume.html"
                             target="_blank"
                             className="btn-primary"
                         >

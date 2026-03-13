@@ -171,7 +171,7 @@ const About = () => {
 
                                 {CONFIG.SHOW_RESUME_ABOUT && (
                                     <a 
-                                        href="/Resume.pdf" 
+                                        href="/resume.html" 
                                         target="_blank" 
                                         className="btn-primary inline-flex items-center gap-2"
                                     >
