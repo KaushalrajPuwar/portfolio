@@ -3,9 +3,12 @@
 // ============================================
 
 export const CONFIG = {
-    SHOW_PUBLICATIONS: false, // Toggle to hide/show the Publications section
-    SHOW_ABOUT_GLARE: true,  // Toggle the glare hover effect on About photo
-    SHOW_ABOUT_TILT: true,    // Toggle the 3D parallax tilt effect on About photo
+    // Note: Env vars are strings. Use '=== true' for Default-OFF, '!== false' for Default-ON.
+    SHOW_PUBLICATIONS: import.meta.env.VITE_SHOW_PUBLICATIONS === 'true', // Default: false
+    SHOW_ABOUT_GLARE:  import.meta.env.VITE_SHOW_ABOUT_GLARE !== 'false',  // Default: true
+    SHOW_ABOUT_TILT:   import.meta.env.VITE_SHOW_ABOUT_TILT  !== 'false',  // Default: true
+    SHOW_RESUME_HERO:  import.meta.env.VITE_SHOW_RESUME_HERO !== 'false',  // Default: true
+    SHOW_RESUME_ABOUT: import.meta.env.VITE_SHOW_RESUME_ABOUT !== 'false', // Default: true
 };
 
 export const SECTIONS = [

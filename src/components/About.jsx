@@ -152,20 +152,44 @@ const About = () => {
                                 Outside of coding, I spend time reading about philosophy, exploring new tech, and experimenting with my macros. I believe the best way to learn is by building, iterating, and sharing the process along the way. I have recently started reading Dune by Frank Herbert.
                             </p>
 
-                            {/* Social links */}
-                            <div className="flex items-center gap-5 pt-4">
-                                {socials.map(({ icon: SocialIcon, href, label }) => (
-                                    <a
-                                        key={label}
-                                        href={href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label={label}
-                                        className="text-muted hover:text-gold transition-colors duration-300"
+                            {/* Social links & Resume Button */}
+                            <div className="flex flex-wrap items-center gap-8 pt-4">
+                                <div className="flex items-center gap-5">
+                                    {socials.map(({ icon: SocialIcon, href, label }) => (
+                                        <a
+                                            key={label}
+                                            href={href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={label}
+                                            className="text-muted hover:text-gold transition-colors duration-300"
+                                        >
+                                            <SocialIcon size={20} />
+                                        </a>
+                                    ))}
+                                </div>
+
+                                {CONFIG.SHOW_RESUME_ABOUT && (
+                                    <a 
+                                        href="/Resume.pdf" 
+                                        target="_blank" 
+                                        className="btn-primary inline-flex items-center gap-2"
                                     >
-                                        <SocialIcon size={20} />
+                                        View Resume
+                                        <svg 
+                                            xmlns="http://www.w3.org/2000/svg" 
+                                            width="16" height="16" 
+                                            viewBox="0 0 24 24" 
+                                            fill="none" 
+                                            stroke="currentColor" 
+                                            strokeWidth="2" 
+                                            strokeLinecap="round" 
+                                            strokeLinejoin="round"
+                                        >
+                                            <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                        </svg>
                                     </a>
-                                ))}
+                                )}
                             </div>
                         </div>
                     </ScrollReveal>

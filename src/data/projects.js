@@ -4,7 +4,7 @@ export const projects = [
         title: 'AutoDocLM',
         description:
             'Generates structured documentation from a GitHub repository by analyzing source code and dependency graphs. Produces a documentation website with architecture overview, module descriptions, setup instructions, and diagrams.',
-        tech: ['Python', 'DeepSeek-Coder-6.7B', 'Qwen2.5-7B', 'Ollama', 'FAISS', 'Sentence Transformers', 'MkDocs'],
+        tech: ['Python', 'Ollama', 'FAISS', 'Sentence Transformers', 'MkDocs'],
         category: 'ml',
         github: 'https://github.com/KaushalrajPuwar/AutoDocLM',
         demo: null,
@@ -15,7 +15,7 @@ export const projects = [
         title: 'Signal Cluster Classification',
         description:
             'SignalCluster is a multiclass classification project using synthetic 2D signal data. Models predict a sample’s cluster category from signal strength and response level, with performance evaluated using Macro F1 Score.',
-        tech: ['Python', 'Jupyter Notebook'],
+        tech: ['Python', 'Sklearn', 'Jupyter Notebook'],
         category: 'ml',
         github: 'https://github.com/KaushalrajPuwar/Signal-Cluster-Classification',
         demo: 'https://www.kaggle.com/competitions/signal-cluster-classification-dataset/submissions',
