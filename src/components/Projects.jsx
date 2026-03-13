@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiGithub, FiExternalLink, FiClock } from 'react-icons/fi';
+import { FiExternalLink, FiClock } from 'react-icons/fi';
+import { SiGithub } from "react-icons/si";
 import ScrollReveal from './ScrollReveal';
 import { projects, categories } from '../data/projects';
 
@@ -59,7 +60,7 @@ const ProjectCard = ({ project }) => {
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-sm text-muted hover:text-gold transition-colors duration-300 font-body"
           >
-            <FiGithub size={15} />
+            <SiGithub size={15} />
             <span>Source</span>
           </a>
         )}
