@@ -1,5 +1,5 @@
 /**
- * Galaxy Background — WebGL star field with mouse interaction
+ * Galaxy Background - WebGL star field with mouse interaction
  * Adapted from ReactBits (MIT). Converted from TypeScript to JSX.
  * All settings are sourced from config.js → GALAXY_CONFIG
  */

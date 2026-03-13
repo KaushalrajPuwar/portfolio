@@ -41,7 +41,7 @@ const Publications = () => {
 
               <div className="relative z-10 py-4">
                 <p className="font-heading text-2xl md:text-3xl text-cream/80 font-light leading-relaxed">
-                  Nothing here yet —
+                  Nothing here yet -
                   <br />
                   <span className="text-gold italic">but watch this space.</span>
                 </p>

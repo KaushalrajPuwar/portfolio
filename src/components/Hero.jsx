@@ -43,7 +43,7 @@ const Hero = () => {
         >
           Computer Science student at IIIT Bangalore.
           <br className="hidden sm:block" />
-          Interested in systems, machine learning, and building things that matter.
+          Interested in Machine Learning, CLoud, and building things.
         </motion.p>
 
         <motion.div

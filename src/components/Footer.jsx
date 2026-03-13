@@ -1,4 +1,5 @@
-import { FiGithub, FiLinkedin, FiMail, FiTwitter, FiHeart } from 'react-icons/fi';
+import { FiLinkedin, FiHeart } from 'react-icons/fi';
+import { SiGithub, SiX, SiGmail } from "react-icons/si";
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -9,10 +10,10 @@ const navLinks = [
 ];
 
 const socials = [
-  { icon: FiGithub, href: '#', label: 'GitHub' },
-  { icon: FiLinkedin, href: '#', label: 'LinkedIn' },
-  { icon: FiTwitter, href: '#', label: 'Twitter' },
-  { icon: FiMail, href: 'mailto:hello@kaushalraj.dev', label: 'Email' },
+    { icon: SiGithub, href: 'https://github.com/KaushalrajPuwar', label: 'GitHub' },
+    { icon: FiLinkedin, href: 'https://linkedin.com/in/kaushalrajpuwar', label: 'LinkedIn' },
+    { icon: SiX, href: 'https://x.com/kaushalrajpuwar', label: 'X' },
+    { icon: SiGmail, href: 'mailto:kaushalrajpuwar@gmail.com', label: 'GMail' },
 ];
 
 const Footer = () => {
@@ -33,7 +34,7 @@ const Footer = () => {
               Kaushalraj Puwar
             </button>
             <p className="font-body text-sm text-muted mt-2 leading-relaxed max-w-xs">
-              Computer science student, builder, and lifelong learner. This is my corner of the web.
+              Computer science student, reader, and tinkerer.
             </p>
           </div>
 

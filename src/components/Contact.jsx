@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiTwitter, FiSend, FiCheck } from 'react-icons/fi';
+import { FiLinkedin, FiSend, FiCheck } from 'react-icons/fi';
+import { SiGithub, SiX, SiGmail } from "react-icons/si";
 import ScrollReveal from './ScrollReveal';
 
 const socials = [
-  { icon: FiGithub, href: '#', label: 'GitHub' },
-  { icon: FiLinkedin, href: '#', label: 'LinkedIn' },
-  { icon: FiTwitter, href: '#', label: 'Twitter' },
-  { icon: FiMail, href: 'mailto:hello@kaushalraj.dev', label: 'Email' },
+    { icon: SiGithub, href: 'https://github.com/KaushalrajPuwar', label: 'GitHub' },
+    { icon: FiLinkedin, href: 'https://linkedin.com/in/kaushalrajpuwar', label: 'LinkedIn' },
+    { icon: SiX, href: 'https://x.com/kaushalrajpuwar', label: 'X' },
+    { icon: SiGmail, href: 'mailto:kaushalrajpuwar@gmail.com', label: 'GMail' },
 ];
 
 const Contact = () => {
@@ -22,9 +23,9 @@ const Contact = () => {
     e.preventDefault();
     // Currently a visual placeholder.
     // To make this functional, integrate with one of:
-    //   • EmailJS (https://emailjs.com)     — sends email directly from the browser
-    //   • Formspree (https://formspree.io)  — form backend, no server needed
-    //   • Web3Forms (https://web3forms.com) — free, simple API
+    //   • EmailJS (https://emailjs.com)     - sends email directly from the browser
+    //   • Formspree (https://formspree.io)  - form backend, no server needed
+    //   • Web3Forms (https://web3forms.com) - free, simple API
     // Each just requires adding your service key and hitting their API in this handler.
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 5000);
@@ -44,12 +45,12 @@ const Contact = () => {
         </ScrollReveal>
 
         <div className="grid md:grid-cols-5 gap-12 lg:gap-16">
-          {/* Left — context + socials */}
+          {/* Left - context + socials */}
           <ScrollReveal direction="left" delay={0.1} className="md:col-span-2">
             <div className="space-y-6">
               <p className="font-body text-cream/70 text-base leading-relaxed">
                 Whether you want to collaborate on a project, talk about research, or just
-                say hi — I&apos;d love to hear from you. I&apos;m always open to interesting
+                say hi - I&apos;d love to hear from you. I&apos;m always open to interesting
                 conversations and new ideas.
               </p>
 
@@ -78,16 +79,16 @@ const Contact = () => {
                   Or email me directly at
                 </p>
                 <a
-                  href="mailto:hello@kaushalraj.dev"
+                  href="mailto:kaushalrajpuwar@gmail.com"
                   className="font-body text-gold hover:text-gold-light transition-colors duration-300"
                 >
-                  hello@kaushalraj.dev
+                  kaushalrajpuwar@gmail.com
                 </a>
               </div>
             </div>
           </ScrollReveal>
 
-          {/* Right — form */}
+          {/* Right - form */}
           <ScrollReveal direction="right" delay={0.2} className="md:col-span-3">
             <AnimatePresence mode="wait">
               {submitted ? (

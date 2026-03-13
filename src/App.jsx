@@ -13,7 +13,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="min-h-screen relative">
-      {/* WebGL star field — fixed behind all content */}
+      {/* WebGL star field - fixed behind all content */}
       <GalaxyBackground />
       <DotNav />
       <div className="relative z-[2]">

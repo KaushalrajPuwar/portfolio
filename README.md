@@ -1,4 +1,4 @@
-# Kaushalraj Puwar — Portfolio
+# Kaushalraj Puwar - Portfolio
 
 A modern, interactive developer portfolio built to showcase my work, skills, and experience. Designed with a dark cosmic aesthetic featuring gold accents and a WebGL-powered interactive galaxy background.
 

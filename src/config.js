@@ -1,9 +1,9 @@
 // ============================================
-// Site Configuration — Single source of truth
+// Site Configuration - Single source of truth
 // ============================================
 
 export const CONFIG = {
-  SHOW_PUBLICATIONS: true, // Toggle to hide/show the Publications section
+  SHOW_PUBLICATIONS: false, // Toggle to hide/show the Publications section
 };
 
 export const SECTIONS = [
@@ -37,7 +37,7 @@ export const GALAXY_CONFIG = {
   repulsionStrength: 1.5,   // How strongly stars repel (1 = gentle, 4 = strong)
 
   // Camera
-  focal: [0.5, 0.5],        // Focal point [x, y] — center of star field
+  focal: [0.5, 0.5],        // Focal point [x, y] - center of star field
   rotation: [1.0, 0.0],     // Camera rotation [cos, sin]
 
   // Rendering
