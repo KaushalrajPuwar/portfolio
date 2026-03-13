@@ -56,15 +56,15 @@ const About = () => {
                     {/* Bio text */}
                     <ScrollReveal direction="right" delay={0.2} className="md:col-span-3">
                         <div className="space-y-5">
-                            <p className="font-body text-cream/90 text-base md:text-lg leading-relaxed">
+                            <p className="font-body text-cream/100 text-base md:text-lg leading-relaxed">
                                 I’m Kaushal, a Computer Science undergraduate at{' '} <span className="text-gold">IIIT Bangalore</span>. I enjoy building systems, experimenting with ideas, and understanding how software and models work beneath the surface.
                             </p>
 
-                            <p className="font-body text-cream/70 text-base md:text-lg leading-relaxed">
+                            <p className="font-body text-cream/90 text-base md:text-lg leading-relaxed">
                                 I’m particularly interested in{' '} <span className="text-gold/80">Machine Learning</span>,{' '} <span className="text-gold/80">Cloud Computing</span>,and{' '}<span className="text-gold/80">DevOps</span>. I like working across the stack - from building low-level tools and training models to designing clean, interactive applications.
                             </p>
 
-                            <p className="font-body text-cream/60 text-base md:text-lg leading-relaxed">
+                            <p className="font-body text-cream/80 text-base md:text-lg leading-relaxed">
                                 Outside of coding, I spend time reading about philosophy, exploring new tech, and experimenting with my macros. I believe the best way to learn is by building, iterating, and sharing the process along the way.
                             </p>
 
