@@ -174,7 +174,7 @@ const Contact = () => {
                                             aria-label={label}
                                             className="w-10 h-10 rounded-full border border-line flex items-center justify-center text-muted hover:text-gold hover:border-gold/40 transition-all duration-300"
                                         >
-                                            <Icon size={17} />
+                                            <Icon size={20} />
                                         </a>
                                     ))}
                                 </div>

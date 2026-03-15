@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FiLinkedin } from 'react-icons/fi';
+import { FiLinkedin, FiFileText } from 'react-icons/fi';
 import { SiGithub, SiX, SiGmail } from "react-icons/si";
 import ScrollReveal from './ScrollReveal';
 import GlareHover from './GlareHover';
@@ -19,6 +19,7 @@ const socials = [
     { icon: FiLinkedin, href: 'https://linkedin.com/in/kaushalrajpuwar', label: 'LinkedIn' },
     { icon: SiX, href: 'https://x.com/kaushalrajpuwar', label: 'X' },
     { icon: SiGmail, href: 'mailto:kaushalrajpuwar@gmail.com', label: 'GMail' },
+    { icon: FiFileText, href: 'https://kaushalrajpuwar.vercel.app/resume.html', label: 'Resume'}
 ];
 
 const About = () => {
@@ -164,7 +165,7 @@ const About = () => {
                                             aria-label={label}
                                             className="text-muted hover:text-gold transition-colors duration-300"
                                         >
-                                            <SocialIcon size={20} />
+                                            <SocialIcon size={25} />
                                         </a>
                                     ))}
                                 </div>

@@ -71,7 +71,7 @@ const Footer = () => {
                                     aria-label={label}
                                     className="text-muted/60 hover:text-gold transition-colors duration-300"
                                 >
-                                    <Icon size={18} />
+                                    <Icon size={20} />
                                 </a>
                             ))}
                         </div>

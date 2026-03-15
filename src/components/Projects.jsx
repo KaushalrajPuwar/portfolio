@@ -60,7 +60,7 @@ const ProjectCard = ({ project }) => {
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-sm text-muted hover:text-gold transition-colors duration-300 font-body"
           >
-            <SiGithub size={15} />
+            <SiGithub size={17} />
             <span>Source</span>
           </a>
         )}
@@ -71,7 +71,7 @@ const ProjectCard = ({ project }) => {
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-sm text-muted hover:text-gold transition-colors duration-300 font-body"
           >
-            <FiExternalLink size={15} />
+            <FiExternalLink size={17} />
             <span>Demo</span>
           </a>
         )}
