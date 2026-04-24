@@ -12,9 +12,9 @@ export const projects = [
     },
     {
         id: 2,
-        title: 'Signal Cluster Classification',
+        title: 'Thermal Plant Control Env',
         description:
-            'This environment simulates a High-Fidelity Steam Turbine Cycle. An LLM agent acts as the Lead Plant Controller, managing the balance between fuel input and cooling flux. A single mistake - such as failing to anticipate thermal inertia during a load spike—can lead to Steam Vessel Over-pressurisation or Catastrophic Core Failure, resulting in a grid-wide blackout.',
+            'This environment simulates a High-Fidelity Steam Turbine Cycle. An LLM agent acts as the Lead Plant Controller, managing the balance between fuel input and cooling flux. A single mistake such as failing to anticipate thermal inertia during a load spike can lead to Steam Vessel Over-pressurisation or Catastrophic Core Failure, resulting in a grid-wide blackout.',
         tech: ['OpenEnv', 'HuggingFace', 'Reinforcement Learning'],
         category: 'ml',
         github: 'https://github.com/KaushalrajPuwar/Thermal-Plant-Control-Env',
