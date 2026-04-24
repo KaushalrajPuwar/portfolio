@@ -8,10 +8,10 @@ export const education = [
         highlights: [
             'Data Structures & Algorithms',
             'Machine Learning',
+            'Natural Language Processing',
             'Operating Systems',
             'Computer Networks',
             'Database Management Systems',
-            'Cyber Security',
         ],
     },
     {

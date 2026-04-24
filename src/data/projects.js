@@ -4,21 +4,21 @@ export const projects = [
         title: 'AutoDocLM',
         description:
             'Generates structured documentation from a GitHub repository by analyzing source code and dependency graphs. Produces a documentation website with architecture overview, module descriptions, setup instructions, and diagrams.',
-        tech: ['Python', 'Ollama', 'FAISS', 'Sentence Transformers', 'MkDocs'],
+        tech: ['Python', 'Ollama', 'Qwen', 'ChromaDB', 'NetworkX', 'MkDocs'],
         category: 'ml',
         github: 'https://github.com/KaushalrajPuwar/AutoDocLM',
         demo: null,
-        status: 'in-progress'
+        status: 'completed'
     },
     {
         id: 2,
         title: 'Signal Cluster Classification',
         description:
-            'SignalCluster is a multiclass classification project using synthetic 2D signal data. Models predict a sample’s cluster category from signal strength and response level, with performance evaluated using Macro F1 Score.',
-        tech: ['Python', 'Sklearn', 'Jupyter Notebook'],
+            'This environment simulates a High-Fidelity Steam Turbine Cycle. An LLM agent acts as the Lead Plant Controller, managing the balance between fuel input and cooling flux. A single mistake - such as failing to anticipate thermal inertia during a load spike—can lead to Steam Vessel Over-pressurisation or Catastrophic Core Failure, resulting in a grid-wide blackout.',
+        tech: ['OpenEnv', 'HuggingFace', 'Reinforcement Learning'],
         category: 'ml',
-        github: 'https://github.com/KaushalrajPuwar/Signal-Cluster-Classification',
-        demo: 'https://www.kaggle.com/competitions/signal-cluster-classification-dataset/submissions',
+        github: 'https://github.com/KaushalrajPuwar/Thermal-Plant-Control-Env',
+        demo: 'https://huggingface.co/spaces/kaushalrajpuwar/thermal-plant-control',
         status: 'completed'
     },
     {
@@ -53,17 +53,6 @@ export const projects = [
         github: 'https://github.com/KaushalrajPuwar/Hospital-Site-Suitability-Hyderabad',
         demo: null,
         status: 'completed'
-    },
-    {
-        id: 6,
-        title: 'Grid Hero',
-        description:
-            'Grid Hero is a strategic pathfinding CLI game where players collect coins across a grid while evading an enemy that dynamically calculates the shortest path to capture them. Coins unlock three progressively harder levels and a final boss battle.',
-        tech: ['C++', 'Java', 'C'],
-        category: 'systems',
-        github: 'https://github.com/KaushalrajPuwar/GridHero',
-        demo: null,
-        status: 'completed',
     },
 ];
 
