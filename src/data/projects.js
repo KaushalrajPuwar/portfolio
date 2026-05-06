@@ -4,7 +4,7 @@ export const projects = [
         title: 'AutoDocLM',
         description:
             'Generates structured documentation from a GitHub repository by analyzing source code and dependency graphs. Produces a documentation website with architecture overview, module descriptions, setup instructions, and diagrams.',
-        tech: ['Python', 'Ollama', 'OpenAI SDK' 'ChromaDB', 'NetworkX', 'MkDocs'],
+        tech: ['Python', 'Ollama', 'OpenAI SDK', 'ChromaDB', 'NetworkX', 'MkDocs'],
         category: 'ml',
         github: 'https://github.com/KaushalrajPuwar/AutoDocLM',
         demo: null,
