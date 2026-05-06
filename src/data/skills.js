@@ -2,17 +2,17 @@ export const skillCategories = [
     {
         name: 'Languages',
         icon: '⟨⟩',
-        skills: ['Python', 'C / C++', 'Java', 'JavaScript', 'HTML', 'CSS', 'SQL'],
+        skills: ['Python', 'C / C++', 'Go', 'Rust', 'JS/TS', 'Java', 'HTML/CSS', 'PostgreSQL'],
     },
     {
         name: 'Frameworks & Libraries',
         icon: '◈',
-        skills: ['PyTorch', 'Scikit-Learn', 'CrewAI', 'ROS 2', 'React', 'Node.js', 'Express', 'Anaconda'],
+        skills: ['PyTorch', 'NumPy', 'CrewAI', 'LangChain', 'Hugging Face', 'React', 'Spring Boot', 'Node.js', 'ROS 2'],
     },
     {
         name: 'Tools & Platforms',
         icon: '⚙',
-        skills: ['Hugging Face', 'Docker', 'AWS', 'MongoDB', 'PostgreSQL'],
+        skills: ['MongoDB', 'Docker', 'AWS', 'Kubernetes', 'Jenkins', 'Anaconda'],
     },
     {
         name: 'Domains',
