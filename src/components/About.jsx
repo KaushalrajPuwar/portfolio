@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { FiLinkedin, FiFileText } from 'react-icons/fi';
+import { FiLinkedin } from 'react-icons/fi';
 import { SiGithub, SiX, SiGmail } from "react-icons/si";
 import ScrollReveal from './ScrollReveal';
 import GlareHover from './GlareHover';
 import TiltedCard from './TiltedCard';
+import { ResumeIconMenu } from './ResumeMenu';
 import { CONFIG, GLARE_CONFIG, TILT_CONFIG } from '../config';
 
 // ──────────────────────────────────────────────────────
@@ -18,8 +19,7 @@ const socials = [
     { icon: SiGithub, href: 'https://github.com/KaushalrajPuwar', label: 'GitHub' },
     { icon: FiLinkedin, href: 'https://linkedin.com/in/kaushalrajpuwar', label: 'LinkedIn' },
     { icon: SiX, href: 'https://x.com/kaushalrajpuwar', label: 'X' },
-    { icon: SiGmail, href: 'mailto:kaushalrajpuwar@gmail.com', label: 'GMail' },
-    { icon: FiFileText, href: 'https://kaushalrajpuwar.vercel.app/resume.html', label: 'Resume'}
+    { icon: SiGmail, href: 'mailto:kaushalrajpuwar@gmail.com', label: 'GMail' }
 ];
 
 const About = () => {
@@ -168,29 +168,8 @@ const About = () => {
                                             <SocialIcon size={25} />
                                         </a>
                                     ))}
+                                    {CONFIG.SHOW_RESUME_ABOUT && <ResumeIconMenu />}
                                 </div>
-
-                                {CONFIG.SHOW_RESUME_ABOUT && (
-                                    <a 
-                                        href="/resume.html" 
-                                        target="_blank" 
-                                        className="btn-primary inline-flex items-center gap-2"
-                                    >
-                                        View Resume
-                                        <svg 
-                                            xmlns="http://www.w3.org/2000/svg" 
-                                            width="16" height="16" 
-                                            viewBox="0 0 24 24" 
-                                            fill="none" 
-                                            stroke="currentColor" 
-                                            strokeWidth="2" 
-                                            strokeLinecap="round" 
-                                            strokeLinejoin="round"
-                                        >
-                                            <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                        </svg>
-                                    </a>
-                                )}
                             </div>
                         </div>
                     </ScrollReveal>

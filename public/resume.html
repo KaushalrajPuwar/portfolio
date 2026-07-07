@@ -7,21 +7,172 @@
     <meta name="description" content="Kaushalraj Puwar - Resume" />
     <title>Kaushal's Resume</title>
     <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --surface-light: #1a1a1a;
+            --line: #1e1e1e;
+            --gold: #c9a96e;
+            --gold-soft: rgba(201, 169, 110, 0.15);
+            --cream: #f0ece2;
+            --muted: #8a8578;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden;
-            background-color: #0d0d0d;
+            background-color: var(--bg);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--cream);
         }
+
         iframe {
             width: 100%;
             height: 100%;
             border: none;
+            display: block;
+        }
+
+        /* ── Top-left pill toggle ─────────────────────────────── */
+        .toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            display: inline-flex;
+            align-items: center;
+            padding: 4px;
+            background: rgba(20, 20, 20, 0.85);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .toggle button {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            background: transparent;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: color 0.25s ease, background 0.25s ease;
+        }
+
+        .toggle button:hover {
+            color: var(--cream);
+        }
+
+        .toggle button[aria-pressed="true"] {
+            color: var(--bg);
+            background: var(--gold);
+            box-shadow: 0 2px 8px rgba(201, 169, 110, 0.25);
+        }
+
+        .toggle button svg {
+            width: 13px;
+            height: 13px;
+        }
+
+        @media (max-width: 640px) {
+            .toggle { top: 12px; left: 12px; }
+            .toggle button { padding: 7px 12px; font-size: 11px; letter-spacing: 0.1em; }
+            .toggle button .label { display: none; }
         }
     </style>
 </head>
 <body>
-    <iframe src="/Resume.pdf" title="Kaushalraj Puwar Resume"></iframe>
+    <div class="toggle" role="tablist" aria-label="Resume type">
+        <button id="btn-sde" type="button" role="tab" aria-pressed="true" aria-controls="resume-frame">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+            </svg>
+            <span class="label">SDE</span>
+        </button>
+        <button id="btn-ml" type="button" role="tab" aria-pressed="false" aria-controls="resume-frame">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                <rect x="9" y="9" width="6" height="6"/>
+                <line x1="9" y1="1" x2="9" y2="4"/>
+                <line x1="15" y1="1" x2="15" y2="4"/>
+                <line x1="9" y1="20" x2="9" y2="23"/>
+                <line x1="15" y1="20" x2="15" y2="23"/>
+                <line x1="20" y1="9" x2="23" y2="9"/>
+                <line x1="20" y1="14" x2="23" y2="14"/>
+                <line x1="1" y1="9" x2="4" y2="9"/>
+                <line x1="1" y1="14" x2="4" y2="14"/>
+            </svg>
+            <span class="label">ML</span>
+        </button>
+    </div>
+
+    <iframe id="resume-frame" title="Kaushalraj Puwar Resume" src="/Resume_SDE.pdf"></iframe>
+
+    <script>
+        (function () {
+            var RESUMES = {
+                sde: '/Resume_SDE.pdf',
+                ml:  '/Resume_ML.pdf'
+            };
+            var DEFAULT = 'sde';
+
+            var frame   = document.getElementById('resume-frame');
+            var btnSde  = document.getElementById('btn-sde');
+            var btnMl   = document.getElementById('btn-ml');
+            var STORAGE = 'preferred-resume';
+
+            function getPreferred() {
+                try { return localStorage.getItem(STORAGE) || DEFAULT; } catch (e) { return DEFAULT; }
+            }
+            function setPreferred(key) {
+                try { localStorage.setItem(STORAGE, key); } catch (e) { /* ignore */ }
+            }
+
+            function activate(key) {
+                if (!RESUMES[key]) key = DEFAULT;
+                frame.src = RESUMES[key];
+                var isSde = key === 'sde';
+                btnSde.setAttribute('aria-pressed', String(isSde));
+                btnMl.setAttribute('aria-pressed', String(!isSde));
+                setPreferred(key);
+            }
+
+            function fromQuery() {
+                var params = new URLSearchParams(window.location.search);
+                var t = (params.get('type') || '').toLowerCase();
+                return RESUMES[t] ? t : null;
+            }
+
+            // Initial selection: query param wins, else localStorage, else default
+            var initial = fromQuery() || getPreferred();
+            activate(initial);
+
+            btnSde.addEventListener('click', function () { activate('sde'); });
+            btnMl.addEventListener('click',  function () { activate('ml');  });
+
+            // Reflect external preference updates (e.g. user opened SDE from the main site
+            // then came back to this tab — keep the toggle in sync).
+            window.addEventListener('storage', function (e) {
+                if (e.key === STORAGE && e.newValue && RESUMES[e.newValue]) {
+                    activate(e.newValue);
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

@@ -94,7 +94,7 @@ const Contact = () => {
         setStatus('loading');
 
         const data = {
-            access_key: 'f072b624-fd87-4890-908a-c032a28d2fab',
+            access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
             name:       formState.name.trim(),
             email:      formState.email.trim(),
             message:    formState.message.trim(),
