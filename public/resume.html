@@ -119,6 +119,15 @@
             </svg>
             <span class="label">ML</span>
         </button>
+        <button id="btn-ui" type="button" role="tab" aria-pressed="false" aria-controls="resume-frame">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="3" y="14" width="7" height="7" rx="1"/>
+                <rect x="14" y="14" width="7" height="7" rx="1"/>
+            </svg>
+            <span class="label">UI</span>
+        </button>
     </div>
 
     <iframe id="resume-frame" title="Kaushalraj Puwar Resume" src="/Resume_SDE.pdf"></iframe>
@@ -127,48 +136,64 @@
         (function () {
             var RESUMES = {
                 sde: '/Resume_SDE.pdf',
-                ml:  '/Resume_ML.pdf'
+                ml:  '/Resume_ML.pdf',
+                ui:  '/Resume_UI.pdf'
             };
             var DEFAULT = 'sde';
+            var KEYS = Object.keys(RESUMES);
 
-            var frame   = document.getElementById('resume-frame');
-            var btnSde  = document.getElementById('btn-sde');
-            var btnMl   = document.getElementById('btn-ml');
+            var frame = document.getElementById('resume-frame');
+            var buttons = {
+                sde: document.getElementById('btn-sde'),
+                ml:  document.getElementById('btn-ml'),
+                ui:  document.getElementById('btn-ui')
+            };
             var STORAGE = 'preferred-resume';
 
+            function isValid(key) {
+                return Object.prototype.hasOwnProperty.call(RESUMES, key);
+            }
+
             function getPreferred() {
-                try { return localStorage.getItem(STORAGE) || DEFAULT; } catch (e) { return DEFAULT; }
+                try {
+                    var stored = localStorage.getItem(STORAGE);
+                    return isValid(stored) ? stored : DEFAULT;
+                } catch (e) {
+                    return DEFAULT;
+                }
             }
             function setPreferred(key) {
+                if (!isValid(key)) return;
                 try { localStorage.setItem(STORAGE, key); } catch (e) { /* ignore */ }
             }
 
             function activate(key) {
-                if (!RESUMES[key]) key = DEFAULT;
+                if (!isValid(key)) key = DEFAULT;
                 frame.src = RESUMES[key];
-                var isSde = key === 'sde';
-                btnSde.setAttribute('aria-pressed', String(isSde));
-                btnMl.setAttribute('aria-pressed', String(!isSde));
+                KEYS.forEach(function (k) {
+                    buttons[k].setAttribute('aria-pressed', String(k === key));
+                });
                 setPreferred(key);
             }
 
             function fromQuery() {
                 var params = new URLSearchParams(window.location.search);
                 var t = (params.get('type') || '').toLowerCase();
-                return RESUMES[t] ? t : null;
+                return isValid(t) ? t : null;
             }
 
             // Initial selection: query param wins, else localStorage, else default
             var initial = fromQuery() || getPreferred();
             activate(initial);
 
-            btnSde.addEventListener('click', function () { activate('sde'); });
-            btnMl.addEventListener('click',  function () { activate('ml');  });
+            KEYS.forEach(function (key) {
+                buttons[key].addEventListener('click', function () { activate(key); });
+            });
 
             // Reflect external preference updates (e.g. user opened SDE from the main site
             // then came back to this tab — keep the toggle in sync).
             window.addEventListener('storage', function (e) {
-                if (e.key === STORAGE && e.newValue && RESUMES[e.newValue]) {
+                if (e.key === STORAGE && isValid(e.newValue)) {
                     activate(e.newValue);
                 }
             });

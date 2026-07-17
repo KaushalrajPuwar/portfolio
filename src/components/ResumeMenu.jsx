@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiFileText, FiCode, FiCpu } from 'react-icons/fi';
 
+// Public options on the main site only. Viewer (resume.html) also supports `ui`.
 const RESUMES = [
     {
         key: 'sde',
@@ -19,14 +20,24 @@ const RESUMES = [
     },
 ];
 
+// Keys the resume viewer can open. Includes `ui` so a preference set in the
+// viewer still deep-links correctly from "View Resume" without exposing UI here.
+const VALID_PREF_KEYS = new Set(['sde', 'ml', 'ui']);
 const PREF_KEY = 'preferred-resume';
+const DEFAULT_PREF = 'sde';
 
 const getPreferred = () => {
-    if (typeof window === 'undefined') return 'sde';
-    return window.localStorage.getItem(PREF_KEY) || 'sde';
+    if (typeof window === 'undefined') return DEFAULT_PREF;
+    try {
+        const stored = window.localStorage.getItem(PREF_KEY);
+        return VALID_PREF_KEYS.has(stored) ? stored : DEFAULT_PREF;
+    } catch {
+        return DEFAULT_PREF;
+    }
 };
 
 const setPreferred = (key) => {
+    if (!VALID_PREF_KEYS.has(key)) return;
     try {
         window.localStorage.setItem(PREF_KEY, key);
     } catch {
